@@ -32,7 +32,7 @@ class Student:
         self.name = name
         self.student_id = student_id 
         self.enrolled_courses = []
-        self.grades = {}
+        self.grades = dict()
 
 
     def enroll_course(self, course):
@@ -77,6 +77,10 @@ class Student:
 
         self.grades[assessment] = grade
         self.grades[course.course_name] = grade
+
+        for cour in self.enrolled_courses:
+            if course == cour:
+                cour.add_assessment(assessment)
 
 
                 
