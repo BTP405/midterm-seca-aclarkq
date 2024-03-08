@@ -42,6 +42,7 @@ class TestCourseManagementSystem(unittest.TestCase):
         self.assertNotIn(self.student1, self.course1.enrolled_students)
         self.student2.drop_course(self.course2)
         self.assertNotIn(self.student2, self.course2.enrolled_students)
+        print(self)
 
     def test_submit_grade(self): # 6 marks
         self.student1.submit_grade(self.course1, self.assignment1, 90)
