@@ -75,12 +75,10 @@ class Student:
             None
         """
 
-        self.grades[assessment] = float(grade)
-        self.grades[course.course_name] = float(grade)
-
         for cour in self.enrolled_courses:
             if course == cour:
-                cour.add_assessment(assessment)
+                self.grades[assessment] = float(grade)
+                self.grades[course] = float(grade)
 
 
                 
