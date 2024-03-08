@@ -78,10 +78,6 @@ class Student:
         self.grades[assessment] = grade
         self.grades[course.course_name] = grade
 
-        for cour in self.enrolled_courses:
-            if course == cour:
-                cour.add_assessment(assessment)
-
 
                 
         
