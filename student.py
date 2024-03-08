@@ -74,12 +74,14 @@ class Student:
         Returns:
             None
         """
+        self.grades[assessment] = grade
+
         for cour in self.enrolled_courses:
             if course == cour:
                 cour.add_assessment(assessment)
+                self.grades[cour.course_name] = grade
 
-                self.grades[assessment] = grade
-                self.grades[cour] = grade
+                
         
 
 
