@@ -74,6 +74,9 @@ class Student:
         Returns:
             None
         """
+
+        print(course, assessment, grade )
+
         self.grades[assessment] = grade
 
         for cour in self.enrolled_courses:
