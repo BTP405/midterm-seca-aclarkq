@@ -29,8 +29,8 @@ class Student:
             name (str): The name of the student.
             student_id (int): The unique ID of the student.
         """
-        self.name = str(name)
-        self.student_id = student_id # Should be an int
+        self.name = name
+        self.student_id = student_id 
         self.enrolled_courses = []
         self.grades = {}
 
@@ -75,14 +75,13 @@ class Student:
             None
         """
 
-        print(course, assessment, grade )
-
         self.grades[assessment] = grade
+        self.grades[course.course_name] = grade
 
         for cour in self.enrolled_courses:
             if course == cour:
                 cour.add_assessment(assessment)
-                self.grades[cour.course_name] = grade
+
 
                 
         
