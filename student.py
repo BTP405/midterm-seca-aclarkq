@@ -46,6 +46,7 @@ class Student:
             None
         """
         self.enrolled_courses.append(course)
+        course.add_student(self)
 
     def drop_course(self, course):
         """
@@ -58,6 +59,7 @@ class Student:
             None
         """
         self.enrolled_courses.remove(course)
+        course.remove_student(self)
 
 
     def submit_grade(self, course, assessment, grade):
@@ -77,6 +79,7 @@ class Student:
                 cour.add_assessment(assessment)
 
                 self.grades[assessment] = grade
+                self.grades[cour] = grade
         
 
 

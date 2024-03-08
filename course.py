@@ -24,7 +24,7 @@ class Course:
         """
         self.course_name = course_name
         self.instructor = instructor
-        self.sections = int(sections)
+        self.sections = sections
         self.prerequisites = list(prerequisites)
         self.enrolled_students = []
         self.waitlisted_students = []
@@ -37,13 +37,15 @@ class Course:
         Args:
             student (Student): The student object to be enrolled or added to the waitlist.
         """
-        if self.enrolled_students.count() >= self.sections:
+        count = 0
+
+        for stud in self.enrolled_students:
+            count += 1
+
+        if count >= self.sections:
             self.waitlisted_students.append(student)
         else:
             self.enrolled_students.append(student)
-
-
-
 
     def remove_student(self, student):
         """Remove a student from the course or the waitlist.
