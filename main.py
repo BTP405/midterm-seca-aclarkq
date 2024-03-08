@@ -8,29 +8,29 @@ class TestCourseManagementSystem(unittest.TestCase):
 
     def setUp(self):
         # Create instructors
-        self.instructor1 = Instructor("John Doe", "001")
-        self.instructor2 = Instructor("Jane Smith", "002")
+        self.instructor1 = Instructor("John Doe", "001") #
+        self.instructor2 = Instructor("Jane Smith", "002") #
 
         # Create courses
-        self.course1 = Course("Mathematics", self.instructor1, sections=2, prerequisites=[])
-        self.course2 = Course("Physics", self.instructor2, sections=1, prerequisites=[self.course1])
+        self.course1 = Course("Mathematics", self.instructor1, sections=2, prerequisites=[]) #
+        self.course2 = Course("Physics", self.instructor2, sections=1, prerequisites=[self.course1]) #
 
         # Create students
-        self.student1 = Student("Alice", "S001")
-        self.student2 = Student("Bob", "S002")
+        self.student1 = Student("Alice", "S001") # 
+        self.student2 = Student("Bob", "S002") #
 
         # Enroll students in courses
-        self.student1.enroll_course(self.course1)
-        self.student2.enroll_course(self.course1)
-        self.student2.enroll_course(self.course2)
+        self.student1.enroll_course(self.course1) #
+        self.student2.enroll_course(self.course1) #
+        self.student2.enroll_course(self.course2) #
 
         # Create assessments
-        self.assignment1 = Assessment("Assignment 1")
-        self.exam1 = Assessment("Midterm Exam")
+        self.assignment1 = Assessment("Assignment 1") #
+        self.exam1 = Assessment("Midterm Exam") #
 
         # Add assessments to courses
-        self.course1.add_assessment(self.assignment1)
-        self.course1.add_assessment(self.exam1)
+        self.course1.add_assessment(self.assignment1) #
+        self.course1.add_assessment(self.exam1) #
 
     def test_enroll_student(self): # 4 marks
         self.assertIn(self.student1, self.course1.enrolled_students)
