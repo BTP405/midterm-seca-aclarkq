@@ -45,6 +45,7 @@ class Student:
         Returns:
             None
         """
+        # What are prerequisites?
         self.enrolled_courses.append(course)
         course.add_student(self)
 
